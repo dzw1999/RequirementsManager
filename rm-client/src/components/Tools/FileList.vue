@@ -18,7 +18,7 @@
           </el-input>
         </el-col>
         <el-col :span="4">
-          <el-button type="primary" @click="addFile()">上传文档</el-button>
+          <el-button type="primary" @click="addFile()">上传文档开始检测</el-button>
         </el-col>
       </el-row>
       <!-- 表格主题区 -->

@@ -16,41 +16,37 @@
     <el-card class="box-card">
       <!-- 头部步骤条区 -->
       <el-alert title="上传文档" type="info" center show-icon></el-alert>
-      <el-steps :active="activeIndex - 0" align-center>
-        <el-step title="填写基本信息"></el-step>
-        <el-step title="上传需求文档"></el-step>
-        <el-step title="模糊语句检测"></el-step>
-        <el-step title="上传结构化信息与关联关系"></el-step>
-        <el-step title="模糊传播分析"></el-step>
-      </el-steps>
 
       <!-- 主体区 -->
-      <el-tabs v-model="activeIndex" tab-position="left" style="overflow: auto;">
-        <el-tab-pane label="填写基本信息" name="0">
+      <el-tabs v-model="activeIndex" tab-position="top" stretch=true style="overflow: auto;position:relative;">
+        <el-tab-pane label="填写基本信息" name="0" class="center">
           <el-form class="project-form" label-position="top" label-width="100px" :model="projectForm"
-            ref="projectFormRef" :rules="projectFormRules">
-            <el-form-item label="文档名称" prop="fileName">
+            ref="projectFormRef" :rules="projectFormRules" style="margin:auto;">
+            <el-form-item label="-------------------------------------------------文档名称----------------------------------------------------" prop="fileName">
               <el-input v-model="projectForm.fileName"></el-input>
             </el-form-item>
-            <el-form-item label="文档描述">
+            <el-form-item label="-------------------------------------------------文档描述----------------------------------------------------">
               <el-input v-model="projectForm.description" type="textarea" :rows="3"></el-input>
             </el-form-item>
             <el-form-item>
-              <el-button type="primary" @click="createFile()">保存</el-button>
+              <el-button type="primary" @click="createFile()"
+              style="margin-top: 10px;position:relative;left:45%;width:10%;">保存</el-button>
             </el-form-item>
           </el-form>
         </el-tab-pane>
-        <el-tab-pane label="上传需求文档" name="1">
-          <el-button style="margin-bottom: 10px;" size="small" type="success" @click="submitUploadFile">上传到服务器</el-button>
+        <el-tab-pane label="上传需求文档" name="1" class="center">
+          <el-button style="margin-bottom:10px;position:relative;left:47%;width:6%;" size="small" type="success" @click="submitUploadFile">上传</el-button>
           <el-tag v-for="tag in uploadFileTags" :key="tag.name" :type="tag.type" v-show="tag.name === currentUploadFileTag"
           style="margin-left: 10px;">{{tag.name}}</el-tag>
-          <el-upload action="" :multiple="false" :limit="1" drag
+          <el-upload style="margin-bottom:10px;position:relative;left:32%;width:36%;"
+          action="" :multiple="false" :limit="1" drag
           :http-request="addUploadFile" :on-remove="removeUploadFile" :auto-upload="true">
             <i class="el-icon-upload"></i>
             <div class="el-upload__text">将文件拖到此处，或<em>点击选取文件</em></div>
-            <div slot="tip" class="el-upload__tip">只能上传doc/docx文件</div>
+            <div slot="tip" style="margin-bottom:10px;position:relative;left:31%;width:38%;" class="el-upload__tip">只能上传doc/docx文件</div>
           </el-upload>
-          <el-button type="primary" @click="activeIndex='2'" style="margin-top: 20px;">下一步</el-button>
+          <el-button type="primary" @click="activeIndex='2'"
+          style="margin-top: 20px;position:relative;left:45%;width:10%;">下一步</el-button>
         </el-tab-pane>
         <!-- 模糊语句检测 -->
         <el-tab-pane label="模糊语句检测" name="2">
@@ -63,8 +59,12 @@
               <span v-html="uncertainoutput"></span>
             </div>
           </el-scrollbar>
-        <el-button type="success" @click="nextstep()" style="margin-top: 20px;">保存结果并退出</el-button>
-        <el-button type="primary" @click="nextstep()" style="margin-top: 20px;">下一步</el-button>
+        <el-button type="primary" @click="gotoFileList()" style="margin-top: 20px;">保存结果并退出</el-button>
+        <el-button type="warning" @click="nextstep()" style="margin-top: 20px;">下一步</el-button>
+        </el-tab-pane>
+        <el-tab-pane label="上传结构化信息与需求关联关系" name="3">
+        </el-tab-pane>
+        <el-tab-pane label="模糊传播分析" name="4">
         </el-tab-pane>
       </el-tabs>
     </el-card>
@@ -92,7 +92,8 @@ export default {
           { required: true, message: '请输入项目名称', trigger: 'blur' }
         ]
       },
-      uncertainoutput: '<span style="color:blue">The following problem is<span style="color:red"> supposed</span> to be the participants of the Dagstuhl Meeting</span> .',
+      fileId: 'wzd',
+      uncertainoutput: '',
       projectsName: 'MyProject',
       activeIndex: '0',
       activeAnalyzeIndex: '0',
@@ -130,6 +131,7 @@ export default {
       if (res.meta.status === 200) {
         this.$message.success(res.meta.msg)
         this.activeIndex = '1'
+        this.fileId = res.data
       } else {
         this.$message.error(res.meta.msg)
       }
@@ -162,6 +164,10 @@ export default {
         }
       }
     },
+    // 返回文件列表
+    gotoFileList () {
+      this.$router.push('/tools/FileList')
+    },
     // 添加文件
     addUploadFile (file) {
       this.uploadFile = file.file
@@ -176,14 +182,20 @@ export default {
       if (!this.uploadFile) return this.$message.error('请导入文件！')
       var formData = new FormData()
       formData.append('file', this.uploadFile)
-      this.currentUploadFileTag = '上传中'
+      this.currentUploadFileTag = '上传中,请稍候'
       const { data: res } = await this.$http({
         method: 'post',
         url: '/file/importfile/upload',
         headers: {
           'Authorization': window.sessionStorage.getItem('token'),
-          'Content-type': 'multipart/form-data'
+          'Content-type': 'application/x-www-form-urlencoded'
         },
+        /*
+        data: {
+          file_id: this.fileId,
+          formData: formData
+        }
+        */
         data: formData
       })
       if (res.meta.status === 200) {
@@ -206,8 +218,8 @@ export default {
           'Authorization': window.sessionStorage.getItem('token')
         },
         data: {
-          token: this.uploadFileToken,
-          fileId: this.$route.fileId
+          fileId: this.fileId,
+          uploadFileToken: this.uploadFileToken
         }
       })
       if (res.meta.status === 200) {
@@ -421,6 +433,15 @@ export default {
 <style lang="less" scoped>
 .el-form {
   width: 70%;
+}
+.center {
+/*
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+*/
+  position:relative;
+  margin:auto;
 }
 </style>
 
