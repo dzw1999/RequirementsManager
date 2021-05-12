@@ -1,0 +1,15 @@
+The	The	DT	B-NP	problem	NN	det	O	O
+following	follow	VBG	I-NP	problem	NN	amod	O	O
+problem	problem	NN	I-NP	suppose	VBN	nsubj	O	O
+is	be	VBZ	B-VP	suppose	VBN	aux	O	O
+supposed	suppose	VBN	I-VP	ROOT	O	root	O	B
+to	to	TO	I-VP	participant	NNS	mark	O	O
+be	be	VB	I-VP	participant	NNS	cop	O	O
+the	the	DT	B-NP	participant	NNS	det	O	O
+participants	participant	NNS	I-NP	suppose	VBN	xcomp	O	O
+of	of	IN	B-PP	meeting	NN	case	O	O
+the	the	DT	B-NP	meeting	NN	det	O	O
+Dagstuhl	Dagstuhl	NNP	I-NP	meeting	NN	compound	O	O
+Meeting	Meeting	NNP	I-NP	participant	NNS	nmod	O	O
+.	.	.	O	suppose	VBN	punct	O	O
+

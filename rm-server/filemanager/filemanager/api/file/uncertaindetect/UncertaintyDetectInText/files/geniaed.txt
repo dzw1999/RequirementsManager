@@ -1,0 +1,15 @@
+The	The	DT	B-NP	O
+following	follow	VBG	I-NP	O
+problem	problem	NN	I-NP	O
+is	be	VBZ	B-VP	O
+supposed	suppose	VBN	I-VP	O
+to	to	TO	I-VP	O
+be	be	VB	I-VP	O
+the	the	DT	B-NP	O
+participants	participant	NNS	I-NP	O
+of	of	IN	B-PP	O
+the	the	DT	B-NP	O
+Dagstuhl	Dagstuhl	NNP	I-NP	O
+Meeting	Meeting	NNP	I-NP	O
+.	.	.	O	O
+
