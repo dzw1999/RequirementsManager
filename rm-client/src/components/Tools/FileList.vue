@@ -32,7 +32,7 @@
               <el-button type="primary" size="small" icon="el-icon-search" @click="getScopeInfo(scope.row.fileId, scope.row.fileName)"></el-button>
             </el-tooltip>
             <el-tooltip class="item" effect="light" content="查看模糊传播分析结果" placement="top-start">
-              <el-button type="success" size="small" icon="el-icon-search" @click="getScopeInfo(scope.row.fileId, scope.row.fileName)"></el-button>
+              <el-button type="success" size="small" icon="el-icon-search" @click="getSpreadInfo(scope.row.fileId, scope.row.fileName)"></el-button>
             </el-tooltip>
             <el-tooltip class="item" effect="light" content="删除文档" placement="top-start">
               <el-button type="danger" size="small" icon="el-icon-delete" @click="deleteFile(scope.row.fileId)"></el-button>
@@ -99,6 +99,9 @@ export default {
     },
     getScopeInfo (fileId, fileName) {
       this.$router.push({ path: '/tools/scopeInfo', query: { fileId: fileId, fileName: fileName } })
+    },
+    getSpreadInfo (fileId, fileName) {
+      this.$router.push({ path: '/tools/spreadInfo', query: { fileId: fileId, fileName: fileName } })
     },
     deleteFile (FileId) {
       this.$messageBox('此操作将永久删除该文档, 是否继续?', '提示', {

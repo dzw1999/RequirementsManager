@@ -14,6 +14,7 @@ import AddFile from './components/Tools/AddFile.vue'
 import ImportFileDoc from './components/Tools/ImportFileDoc.vue'
 import ProjectProfile from './components/Projects/ProjectProfile.vue'
 import ScopeInfo from './components/Tools/ScopeInfo.vue'
+import SpreadInfo from './components/Tools/SpreadInfo.vue'
 import AddSingleRequirement from './components/Requirements/AddSingleRequirement.vue'
 import ImportRequirementDoc from './components/Requirements/ImportRequirementDoc.vue'
 import RequirementHomepage from './components/Requirements/RequirementHomepage.vue'
@@ -38,6 +39,7 @@ const routes = [
       { path: '/tools/fileList', component: FileList },
       { path: '/tools/importFileDoc', component: ImportFileDoc },
       { path: '/tools/scopeInfo', component: ScopeInfo },
+      { path: '/tools/spreadInfo', component: SpreadInfo },
       {
         path: '/projects/projectHomepage',
         component: ProjectHomepage,

@@ -9,13 +9,13 @@
           path: '/tools/FileList'
         }">模糊检测</el-breadcrumb-item>
         <el-breadcrumb-item>{{this.$route.query.fileName}}</el-breadcrumb-item>
-        <el-breadcrumb-item>模糊语句检测结果</el-breadcrumb-item>
+        <el-breadcrumb-item>模糊传播分析结果</el-breadcrumb-item>
       </el-breadcrumb>
     </div>
     <div :style="mystyle">
       <el-scrollbar style="height:100%">
         <div style="width:850px;height:600px;border:solid;overflow-x:auto;" >
-          <span v-html="uncertainoutput"></span>
+          <span v-html="spreadoutput"></span>
         </div>
       </el-scrollbar>
     </div>
@@ -26,7 +26,7 @@
 <script>
 export default {
   created () {
-    this.getScope()
+    this.getSpread()
   },
   data () {
     return {
@@ -47,7 +47,8 @@ export default {
           { required: true, message: '请输入项目名称', trigger: 'blur' }
         ]
       },
-      uncertainoutput: ''
+      uncertainoutput: '',
+      spreadoutput: ''
     }
   },
   methods: {
@@ -55,10 +56,10 @@ export default {
     gotoFileList () {
       this.$router.push('/tools/FileList')
     },
-    async getScope () {
+    async getSpread () {
       const { data: res } = await this.$http({
         method: 'get',
-        url: '/file/getscope',
+        url: '/file/getspread',
         headers: {
           'Authorization': window.sessionStorage.getItem('token')
         },
@@ -68,7 +69,7 @@ export default {
       })
       if (res.meta.status === 200) {
         this.$message.success(res.meta.msg)
-        this.uncertainoutput = res.data
+        this.spreadoutput = res.data
       } else {
         this.$message.error(res.meta.msg)
       }
