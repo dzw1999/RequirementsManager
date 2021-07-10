@@ -1,0 +1,14 @@
+[
+  {"id":"123","groupid":"0","event":"","agent":"[universal]header warc.h","operation":"provide","input":"warc.h, ISO TC 46/SC 4 N 595, ","output":"WARC-records, WARC records","restriction":"","description":"The universal header \"warc.h\" shall provide normalised interfaces to enable developers to create valid and compliant WARC-records, based on the definition in the \"ISO TC 46/SC 4 N 595\" standards document. The interfaces shall be made available to create WARC records of the following types:- \"warinfo\"- \"response\"- \"request\"- \"metadata\"- \"revisit\"- \"conversion\"- \"continuation\"- \"resource\""},
+
+  {"id":"124","groupid":"0","event":"","agent":"ALL warc record","operation":"be accessible","input":"WARC-record, peer C class","output":"","restriction":"via a peer C class of the same name","description":"Each WARC-record shall be accessible via a peer C class of the same name."},
+
+  {"id":"125","groupid":"0","event":"","agent":"attribute[of ]","operation":"have","input":"WARC-record, ISO standard specification, peer C class","output":"","restriction":"","description":"The attributes of each WARC-record, as per the ISO standard specification, shall have a corresponding attribute in its peer C class."},
+
+  {"id":"126","groupid":"0","event":"","agent":"ALL peer class","operation":"expose","input":"peer class, WARC-record","output":"WARC-record","restriction":"","description":"Each peer class shall expose a set a class functions to read, write, and update attributes for the corresponding WARC-record."},
+
+  {"id":"150","groupid":"0","event":"","agent":"it","operation":"be possible","input":"WARCrecords","output":"","restriction":"via http","description":"It shall be possible to perform read operations (read from offset, filters, etc.) on WARCrecords from a remote location via http."},
+
+  {"id":"160","groupid":"0","event":"","agent":"it","operation":"be possible","input":"arc2warc, named configuration file, ARC-record","output":"WARC-record","restriction":"","description":"It shall be possible to specify non-default operations of \"arc2warc\" using a named configuration file, which will describe the desired ARC-record to WARC-record conversion."}
+
+]
