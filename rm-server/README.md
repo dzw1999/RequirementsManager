@@ -44,6 +44,25 @@
   python3 requirementmanager/main.py flask | tornado
   ```
 
++ 模糊检测服务：
+
+  ```
+  cd filemanager
+  pip3 install [-e] .
+  python3 filemanager/main.py flask | tornado
+  ```
+  ```
+  此外，由于模糊检测需要通过stanza调用Stanford CoreNLP，所以需要额外安装CoreNLP软件包，具体可参考如下链接
+  https://stanfordnlp.github.io/stanza/client_setup.html
+  ```
++ 模板管理服务：
+
+  ```
+  cd templatemanager
+  pip3 install [-e] .
+  python3 templatemanager/main.py flask | tornado
+  ```
+
 ## 初始化/格式化数据库
 
 ```
@@ -63,3 +82,13 @@ cd requirementmanager
 python3 scripts/clear.py
 ```
 
+```
+cd templatemanager
+python3 scripts/create_template.py
+python3 scripts/clear.py
+```
+
+```
+cd filemanager
+python3 scripts/clear.py
+```

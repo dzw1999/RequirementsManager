@@ -1,7 +1,7 @@
 import stanza
 from stanza.server import CoreNLPClient
 import re
-from filemanager.filemanager.api.file.uncertaindetect.UncertaintyDetectInText.config import *
+from filemanager.api.file.uncertaindetect.UncertaintyDetectInText.config import *
 import collections
 class tNode:
     def __init__(self, node, pnode, isleaf):

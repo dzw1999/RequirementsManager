@@ -1,10 +1,10 @@
 from flask import request
 import os
 
-from filemanager.filemanager.app import app
-from filemanager.filemanager.mongodb import file_collection
-from filemanager.filemanager.dao.file import FileMongoDBDao
-from filemanager.filemanager.utils.handle_api import handle_response
+from filemanager.app import app
+from filemanager.mongodb import file_collection
+from filemanager.dao.file import FileMongoDBDao
+from filemanager.utils.handle_api import handle_response
 
 META_SUCCESS = {'status': 200, 'msg': '获取成功！'}
 META_ERROR_NO_FILE = {'status': 404, 'msg': '无对应检测结果！'}

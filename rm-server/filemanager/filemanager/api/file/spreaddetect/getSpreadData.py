@@ -1,4 +1,4 @@
-from filemanager.filemanager.api.file.spreaddetect.UncertaintySpreadAnalyze.control2 import getResWithFileName
+from filemanager.api.file.spreaddetect.UncertaintySpreadAnalyze.control2 import getResWithFileName
 def getSpreadData(strupath:str,relapath:str):
     # res=""
     # with open(relapath,"r",encoding='UTF-8') as f:

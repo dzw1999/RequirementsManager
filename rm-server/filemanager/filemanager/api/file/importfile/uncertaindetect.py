@@ -1,12 +1,12 @@
 import os
 
 from flask import request
-from filemanager.filemanager.app import app
-from filemanager.filemanager.utils.handle_api import handle_response
-from filemanager.filemanager.api.file.uncertaindetect.getUncertainData import getUncertainData
+from filemanager.app import app
+from filemanager.utils.handle_api import handle_response
+from filemanager.api.file.uncertaindetect.getUncertainData import getUncertainData
 
-from filemanager.filemanager.dao.file import FileMongoDBDao
-from filemanager.filemanager.mongodb import file_collection
+from filemanager.dao.file import FileMongoDBDao
+from filemanager.mongodb import file_collection
 
 META_SUCCESS = {'status': 200, 'msg': '检测成功！'}
 META_ERROR_NO_FILE = {'status': 404, 'msg': '检测失败，文件不存在！'}

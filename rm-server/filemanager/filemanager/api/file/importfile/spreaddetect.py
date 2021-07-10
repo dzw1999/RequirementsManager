@@ -1,9 +1,9 @@
 import os
 
 from flask import request
-from filemanager.filemanager.app import app
-from filemanager.filemanager.utils.handle_api import handle_response
-from filemanager.filemanager.api.file.spreaddetect.getSpreadData import getSpreadData
+from filemanager.app import app
+from filemanager.utils.handle_api import handle_response
+from filemanager.api.file.spreaddetect.getSpreadData import getSpreadData
 
 
 META_SUCCESS = {'status': 200, 'msg': '分析成功！'}

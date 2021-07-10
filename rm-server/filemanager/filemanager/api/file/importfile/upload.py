@@ -1,9 +1,9 @@
 import os
 from flask import request
 
-from filemanager.filemanager.app import app
-from filemanager.filemanager.utils.handle_api import handle_response
-from filemanager.filemanager.utils.uuid import generate_uuid
+from filemanager.app import app
+from filemanager.utils.handle_api import handle_response
+from filemanager.utils.uuid import generate_uuid
 
 META_SUCCESS = {'status': 200, 'msg': '上传成功！'}
 META_ERROR_BAD_FILE = {'status': 400, 'msg': '上传失败，文件格式错误！'}

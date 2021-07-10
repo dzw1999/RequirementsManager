@@ -4,8 +4,8 @@
 from docx import Document
 from typing import List
 from interval import Interval,IntervalSet
-from filemanager.filemanager.api.file.uncertaindetect.UncertaintyDetectInText.getSpeculativeWord import getCues
-from filemanager.filemanager.api.file.uncertaindetect.UncertaintyDetectInText.getscope import anno_sentence
+from filemanager.api.file.uncertaindetect.UncertaintyDetectInText.getSpeculativeWord import getCues
+from filemanager.api.file.uncertaindetect.UncertaintyDetectInText.getscope import anno_sentence
 
 def findindex(sentence:List,scope:List):
     l=len(scope)

@@ -42,3 +42,21 @@ from gateway.router.requirementmanager.requirement.importfile.create import requ
 from gateway.router.requirementmanager.requirement.analyze.conflict import requirement_analyze_conflict
 from gateway.router.requirementmanager.requirement.analyze.relationship import requirement_analyze_relationship
 from gateway.router.requirementmanager.requirement.analyze.similarity import requirement_analyze_similarity
+
+from gateway.router.templatemanager.template.create import template_create
+from gateway.router.templatemanager.template.edit import template_edit
+from gateway.router.templatemanager.template.upload import template_upload
+from gateway.router.templatemanager.template.delete import template_delete
+from gateway.router.templatemanager.template.list import template_list
+
+from gateway.router.templatemanager.document.list import document_list
+from gateway.router.templatemanager.document.create import document_create
+from gateway.router.templatemanager.document.delete import document_delete
+from gateway.router.templatemanager.document.edit import document_edit
+from gateway.router.templatemanager.document.download import document_download
+from gateway.router.templatemanager.document.profile import document_profile
+
+from gateway.router.templatemanager.document.comments.classify import comments_classsify
+from gateway.router.templatemanager.document.comments.wordcloud import comments_wordcloud
+from gateway.router.templatemanager.document.comments.upload import comments_upload
+from gateway.router.templatemanager.document.comments.similarity import comments_similarity

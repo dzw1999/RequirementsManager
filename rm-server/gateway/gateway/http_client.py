@@ -3,8 +3,9 @@ from urllib.parse import urljoin, quote
 
 import requests
 
-from gateway.config import USER_MANAGER_URL
-
+from gateway.config import (
+    USER_MANAGER_URL, PROJECT_MANAGER_URL, REQUIREMENT_MANAGER_URL,FILE_MANAGER_URL,TEMPLATE_MANAGET_URL
+)
 
 DEFAULT_TIMEOUT = 60
 
@@ -43,11 +44,10 @@ class HttpClient:
         return self._request(endpoint, 'DELETE', client_username, **kwargs)
 
 
-from gateway.config import (
-    USER_MANAGER_URL, PROJECT_MANAGER_URL, REQUIREMENT_MANAGER_URL,FILE_MANAGER_URL
-)
+
 
 usermanager_http_client = HttpClient(USER_MANAGER_URL)
 projectmanager_http_client = HttpClient(PROJECT_MANAGER_URL)
 requirementmanager_http_client = HttpClient(REQUIREMENT_MANAGER_URL)
 filemanager_http_client = HttpClient(FILE_MANAGER_URL)
+templatemanager_http_client = HttpClient(TEMPLATE_MANAGET_URL)

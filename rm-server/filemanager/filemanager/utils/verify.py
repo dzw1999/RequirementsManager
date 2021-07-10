@@ -1,5 +1,5 @@
-from filemanager.filemanager.mongodb import (file_collection)
-from filemanager.filemanager.dao.file import FileMongoDBDao
+from filemanager.mongodb import (file_collection)
+from filemanager.dao.file import FileMongoDBDao
 
 
 def verify_file_exist(file_id:str):

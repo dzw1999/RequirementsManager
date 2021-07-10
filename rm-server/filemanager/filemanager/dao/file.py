@@ -2,7 +2,7 @@ from dataclasses import dataclass
 
 from pymongo.collection import Collection
 
-from filemanager.filemanager.utils.uuid import generate_uuid
+from filemanager.utils.uuid import generate_uuid
 
 
 @dataclass

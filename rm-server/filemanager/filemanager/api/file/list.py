@@ -1,11 +1,11 @@
 from flask import request
 
-from filemanager.filemanager.app import app
-from filemanager.filemanager.mongodb import file_collection
-from filemanager.filemanager.dao.file import  FileMongoDBDao
-from filemanager.filemanager.dao.file_list import FileListMongoDBDao
-from filemanager.filemanager.mongodb import file_collection
-from filemanager.filemanager.utils.handle_api import handle_response
+from filemanager.app import app
+from filemanager.mongodb import file_collection
+from filemanager.dao.file import  FileMongoDBDao
+from filemanager.dao.file_list import FileListMongoDBDao
+from filemanager.mongodb import file_collection
+from filemanager.utils.handle_api import handle_response
 
 META_SUCCESS = {'status': 200, 'msg': '获取成功！'}
 

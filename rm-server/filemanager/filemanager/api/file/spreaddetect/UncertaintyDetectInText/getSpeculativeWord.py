@@ -1,5 +1,5 @@
 import os
-from filemanager.filemanager.api.file.spreaddetect.UncertaintyDetectInText import config
+from filemanager.api.file.spreaddetect.UncertaintyDetectInText import config
 import stanza
 
 def aftergenia():

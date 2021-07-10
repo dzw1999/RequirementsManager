@@ -8,9 +8,9 @@ from tornado.ioloop import IOLoop
 # 所以先installl试试
 # 第二天又想了一下,install是一个不可逆的操作，不如先直接这样试一下可不可以，如果不可以再说呗
 
-from filemanager.filemanager.app import app
-import filemanager.filemanager.router
-from filemanager.filemanager.config import PORT,IS_DEBUG
+from filemanager.app import app
+import filemanager.router
+from filemanager.config import PORT,IS_DEBUG
 
 if __name__ == '__main__':
     app.run(

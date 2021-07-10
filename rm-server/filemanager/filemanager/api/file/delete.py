@@ -1,9 +1,9 @@
 from flask import request
 
-from filemanager.filemanager.app import app
-from filemanager.filemanager.mongodb import file_collection
-from filemanager.filemanager.dao.file import FileMongoDBDao
-from filemanager.filemanager.utils.handle_api import handle_response
+from filemanager.app import app
+from filemanager.mongodb import file_collection
+from filemanager.dao.file import FileMongoDBDao
+from filemanager.utils.handle_api import handle_response
 
 META_SUCCESS = {'status': 200, 'msg': '删除成功！'}
 

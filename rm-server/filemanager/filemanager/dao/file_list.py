@@ -2,7 +2,7 @@ from typing import List
 
 from pymongo.collection import Collection
 
-from filemanager.filemanager.dao.file import File
+from filemanager.dao.file import File
 
 class FileListDao:
     def get_all_files(self):

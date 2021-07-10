@@ -1,8 +1,8 @@
-from filemanager.filemanager.api.file.spreaddetect.UncertaintySpreadAnalyze import data
+from filemanager.api.file.spreaddetect.UncertaintySpreadAnalyze import data
 import stanza
-from filemanager.filemanager.api.file.spreaddetect.UncertaintyDetectInText import getSpeculativeWord
-from filemanager.filemanager.api.file.spreaddetect.UncertaintyDetectInText import getscope
-from filemanager.filemanager.api.file.spreaddetect.UncertaintySpreadAnalyze import demo
+from filemanager.api.file.spreaddetect.UncertaintyDetectInText import getSpeculativeWord
+from filemanager.api.file.spreaddetect.UncertaintyDetectInText import getscope
+from filemanager.api.file.spreaddetect.UncertaintySpreadAnalyze import demo
 import re
 import pprint
 import json
